@@ -1,0 +1,12 @@
+[Unit]
+Description=Split Flap Clock
+Wants=network-online.target
+After = network.target network-online.target 
+
+[Service]
+ExecStartPre=bash /home/pi/sync-system-time.sh
+ExecStart=/home/pi/sfc.py
+WorkingDirectory= /home/pi
+
+[Install]
+WantedBy=default.target

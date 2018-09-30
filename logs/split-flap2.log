@@ -1,0 +1,173 @@
+INFO:__main__:startClock() 
+
+INFO:__main__:++++++++++ readCurrentState
+INFO:__main__:current time read from current_time.txt
+INFO:__main__:---------- readCurrentState
+
+INFO:__main__:++++++++++ getRealTimeEST
+INFO:__main__: 10:05:00
+INFO:__main__:---------- getRealTimeEST
+
+INFO:__main__:++++++++++ run_show_time
+INFO:__main__:time after calibration = 2018-10-07 14:05:16.877023
+INFO:__main__:++++++++++ write_time_to_log
+INFO:__main__:++++++++++ getRealTimeEST
+INFO:__main__: 10:05:00
+INFO:__main__:---------- getRealTimeEST
+
+INFO:__main__:getRealTimeEST = 10:05:00
+INFO:__main__: hour, minute_h and minute_l written to log = 10 0 5
+INFO:__main__:---------- write_time_to_log
+
+INFO:__main__:startClock() 
+
+INFO:__main__:++++++++++ readCurrentState
+INFO:__main__:current time read from current_time.txt
+INFO:__main__:---------- readCurrentState
+
+INFO:__main__:++++++++++ getRealTimeEST
+INFO:__main__: 10:04:00
+INFO:__main__:---------- getRealTimeEST
+
+INFO:__main__:++++++++++ run_show_time
+INFO:__main__:time after calibration = 2018-10-07 14:05:05.774993
+INFO:__main__:++++++++++ write_time_to_log
+INFO:__main__:++++++++++ getRealTimeEST
+INFO:__main__: 10:05:00
+INFO:__main__:---------- getRealTimeEST
+
+INFO:__main__:getRealTimeEST = 10:05:00
+INFO:__main__: hour, minute_h and minute_l written to log = 10 0 4
+INFO:__main__:---------- write_time_to_log
+
+INFO:__main__:++++++++++ test
+INFO:__main__:XX:X4, updating minute_l
+INFO:__main__:previously 10:04
+INFO:__main__:previously 10:05
+INFO:__main__:++++++++++ write_time_to_log
+INFO:__main__:++++++++++ getRealTimeEST
+INFO:__main__: 10:09:00
+INFO:__main__:---------- getRealTimeEST
+
+INFO:__main__:getRealTimeEST = 10:09:00
+INFO:__main__: hour, minute_h and minute_l written to log = 10 0 5
+INFO:__main__:---------- write_time_to_log
+
+INFO:__main__:++++++++++ getRealTimeEST
+INFO:__main__: 10:10:00
+INFO:__main__:---------- getRealTimeEST
+
+INFO:__main__:startClock() 
+
+INFO:__main__:++++++++++ readCurrentState
+INFO:__main__:current time read from current_time.txt
+INFO:__main__:---------- readCurrentState
+
+INFO:__main__:++++++++++ getRealTimeEST
+INFO:__main__: 10:30:00
+INFO:__main__:---------- getRealTimeEST
+
+INFO:__main__:++++++++++ run_show_time
+INFO:__main__:time after calibration = 2018-10-07 14:30:12.678596
+INFO:__main__:++++++++++ write_time_to_log
+INFO:__main__:++++++++++ getRealTimeEST
+INFO:__main__: 10:30:00
+INFO:__main__:---------- getRealTimeEST
+
+INFO:__main__:getRealTimeEST = 10:30:00
+INFO:__main__: hour, minute_h and minute_l written to log = 10 3 0
+INFO:__main__:---------- write_time_to_log
+
+INFO:__main__:++++++++++ test
+INFO:__main__:XX:X0, updating minute_l
+INFO:__main__:previously 10:30
+INFO:__main__:previously 10:31
+INFO:__main__:++++++++++ write_time_to_log
+INFO:__main__:++++++++++ getRealTimeEST
+INFO:__main__: 10:36:00
+INFO:__main__:---------- getRealTimeEST
+
+INFO:__main__:getRealTimeEST = 10:36:00
+INFO:__main__: hour, minute_h and minute_l written to log = 10 3 1
+INFO:__main__:---------- write_time_to_log
+
+INFO:__main__:++++++++++ getRealTimeEST
+INFO:__main__: 10:37:00
+INFO:__main__:---------- getRealTimeEST
+
+INFO:__main__:startClock() 
+
+INFO:__main__:++++++++++ readCurrentState
+INFO:__main__:current time read from current_time.txt
+INFO:__main__:---------- readCurrentState
+
+INFO:__main__:++++++++++ getRealTimeEST
+INFO:__main__: 10:39:00
+INFO:__main__:---------- getRealTimeEST
+
+INFO:__main__:++++++++++ run_show_time
+INFO:__main__:time after calibration = 2018-10-07 14:39:36.297208
+INFO:__main__:++++++++++ write_time_to_log
+INFO:__main__:++++++++++ getRealTimeEST
+INFO:__main__: 10:39:00
+INFO:__main__:---------- getRealTimeEST
+
+INFO:__main__:getRealTimeEST = 10:39:00
+INFO:__main__: hour, minute_h and minute_l written to log = 10 3 9
+INFO:__main__:---------- write_time_to_log
+
+INFO:__main__:++++++++++ test
+INFO:__main__:XX:<59, updating minute_h and minute_l
+INFO:__main__:previously 10:39
+INFO:__main__:now 10:40
+INFO:__main__:++++++++++ write_time_to_log
+INFO:__main__:++++++++++ getRealTimeEST
+INFO:__main__: 10:43:00
+INFO:__main__:---------- getRealTimeEST
+
+INFO:__main__:getRealTimeEST = 10:43:00
+INFO:__main__: hour, minute_h and minute_l written to log = 10 4 0
+INFO:__main__:---------- write_time_to_log
+
+INFO:__main__:++++++++++ getRealTimeEST
+INFO:__main__: 10:44:00
+INFO:__main__:---------- getRealTimeEST
+
+INFO:__main__:startClock() 
+
+INFO:__main__:++++++++++ readCurrentState
+INFO:__main__:current time read from current_time.txt
+INFO:__main__:---------- readCurrentState
+
+INFO:__main__:++++++++++ getRealTimeEST
+INFO:__main__: 10:46:00
+INFO:__main__:---------- getRealTimeEST
+
+INFO:__main__:++++++++++ run_show_time
+INFO:__main__:time after calibration = 2018-10-07 14:46:10.199226
+INFO:__main__:++++++++++ write_time_to_log
+INFO:__main__:++++++++++ getRealTimeEST
+INFO:__main__: 10:46:00
+INFO:__main__:---------- getRealTimeEST
+
+INFO:__main__:getRealTimeEST = 10:46:00
+INFO:__main__: hour, minute_h and minute_l written to log = 10 4 6
+INFO:__main__:---------- write_time_to_log
+
+INFO:__main__:++++++++++ test
+INFO:__main__:XX:X6, updating minute_l
+INFO:__main__:previously 10:46
+INFO:__main__:previously 10:47
+INFO:__main__:++++++++++ write_time_to_log
+INFO:__main__:++++++++++ getRealTimeEST
+INFO:__main__: 10:47:00
+INFO:__main__:---------- getRealTimeEST
+
+INFO:__main__:getRealTimeEST = 10:47:00
+INFO:__main__: hour, minute_h and minute_l written to log = 10 4 7
+INFO:__main__:---------- write_time_to_log
+
+INFO:__main__:++++++++++ getRealTimeEST
+INFO:__main__: 10:48:00
+INFO:__main__:---------- getRealTimeEST
+
