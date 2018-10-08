@@ -110,9 +110,6 @@ def run_show_time(current, desired):
 	m['motor'].motor_run(m['pins'], .002, offsets['minute_l'][desired_minute_l], m['ccwise'], False, "half", .05)
 	logger.info('time after calibration = %s', dt.datetime.now())
 
-	#hour  =  desired.hour
-	#minute_h = desired.minute // 10
-	#minute_l = desired.minute % 10
 
 	write_time_to_log(desired_hour, desired_minute_h, desired_minute_l)
 	time.sleep(60-1)
@@ -153,9 +150,10 @@ def test(hour, minute_h, minute_l):
 	clk_t = readCurrentState()
 	rt_EST = getRealTimeEST()
 
+	#if the diff between the minutes is >= 3 then run_show_time
 	if clk_t.hour == rt_EST.hour & clk_t.minute == rt_EST.minute :
 
-		if minute_h < 5 and minute_l == 9:
+		if -(clk_t.minute - rt_EST.minute) % 60 < 3 :
 			logger.info('XX:<59, updating minute_h and minute_l')
 			logger.info('previously %s:%s%s', hour, minute_h, minute_l)
 
@@ -206,29 +204,7 @@ def test(hour, minute_h, minute_l):
 	time.sleep(60-1)
 
 	threading.Timer(1, test(hour, minute_h, minute_l).start())
-	# threading.Timer(1, test(realTimeEST.hour, realTimeEST.minute_h, realTimeEST.minute_l).start())
 	logger.info('---------- test\n')
-
-#Check for skew and recalibrate if clk drifts
-#Recalibrate once every half hour?
-# def recalibrate():
-# 	logger.info('++++++++++ recalibrate')
-#
-# 	logger.info('checking if we need to recalibrate...')
-# 	clock_time = readCurrentState()
-# 	realtime_EST = getRealTimeEST()
-# 	logger.info('clock_time =  %s', clock_time)
-# 	logger.info('realtime_EST = %s', realtime_EST)
-#
-# 	threading.Timer(3600, recalibrate).start()
-#
-# 	if clock_time != realtime_EST:
-# 		logger.info('RECALIBRATING, calling run_show_time...')
-# 		logger.info('---------- recalibrate\n')
-# 		run_show_time(clock_time, realtime_EST)
-#
-# 	logger.info('---------- recalibrate\n')
-
 
 def readCurrentState():
 	logger.info('++++++++++ readCurrentState')
@@ -262,7 +238,6 @@ def startClock():
 	logger.info('startClock() \n')
 	clock_time = readCurrentState()
 	realtime_EST = getRealTimeEST()
-	# recalibrate()
 	run_show_time(clock_time, realtime_EST)
 
 def main():
