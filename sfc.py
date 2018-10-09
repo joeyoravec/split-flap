@@ -110,7 +110,6 @@ def run_show_time(current, desired):
 	m['motor'].motor_run(m['pins'], .002, offsets['minute_l'][desired_minute_l], m['ccwise'], False, "half", .05)
 	logger.info('time after calibration = %s', dt.datetime.now())
 
-
 	write_time_to_log(desired_hour, desired_minute_h, desired_minute_l)
 	time.sleep(60-1)
 	test(desired_hour, desired_minute_h, desired_minute_l)
@@ -149,11 +148,13 @@ def test(hour, minute_h, minute_l):
 
 	clk_t = readCurrentState()
 	rt_EST = getRealTimeEST()
+	logger.info('%s %s', clk_t.minute, rt_EST.minute)
+	logger.info('%s', -(clk_t.minute - rt_EST.minute) % 60 < 3)
 
-	#if the diff between the minutes is >= 3 then run_show_time
-	if clk_t.hour == rt_EST.hour & clk_t.minute == rt_EST.minute :
+	if  -(clk_t.minute - rt_EST.minute) % 60 <= 1 :
+		logger.info("-(clk_t.minute - rt_est.minute) % 60 <= 1")
 
-		if -(clk_t.minute - rt_EST.minute) % 60 < 3 :
+		if minute_h < 5 and minute_l == 9:
 			logger.info('XX:<59, updating minute_h and minute_l')
 			logger.info('previously %s:%s%s', hour, minute_h, minute_l)
 
@@ -168,7 +169,7 @@ def test(hour, minute_h, minute_l):
 			logger.info('now %s:%s%s', hour, minute_h, minute_l)
 
 		elif minute_h == 5 and minute_l == 9:
-			logger.info('XX:%s%s, updating minute_h and minute_l',minute_h, minute_l)
+			logger.info('XX:%s%s, updating 5 x minute_h and minute_l',minute_h, minute_l)
 			logger.info('previously %s:%s%s', hour, minute_h, minute_l)
 
 			m = motor['hour']
@@ -196,6 +197,7 @@ def test(hour, minute_h, minute_l):
 			minute_l+=1
 			logger.info('now %s:%s%s', hour, minute_h, minute_l)
 	else:
+		logger.info("-(clk_t.minute - rt_est.minute) % 60 > 1")
 		run_show_time(clk_t,rt_EST)
 
 	hour = hour % 12
@@ -203,7 +205,7 @@ def test(hour, minute_h, minute_l):
 
 	time.sleep(60-1)
 
-	threading.Timer(1, test(hour, minute_h, minute_l).start())
+	test(hour, minute_h, minute_l)
 	logger.info('---------- test\n')
 
 def readCurrentState():
@@ -218,6 +220,7 @@ def readCurrentState():
 		hour = hour % 12
 	minutes = int(time[1])
 	clock_time = dt.time(hour,minutes)
+	logger.info('curr state  = %s',clock_time)
 	logger.info('---------- readCurrentState\n')
 
 	return clock_time
